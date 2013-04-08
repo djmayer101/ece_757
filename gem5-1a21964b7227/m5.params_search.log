@@ -1,0 +1,164 @@
+./configs/topologies/Crossbar.py:from m5.params import *
+./configs/topologies/Mesh.py:from m5.params import *
+./configs/topologies/MeshDirCorners.py:from m5.params import *
+./configs/topologies/Pt2Pt.py:from m5.params import *
+./configs/topologies/Torus.py:from m5.params import *
+./src/SConscript:import m5.params
+./src/SConscript:m5.params.clear()
+./src/SConscript:all_enums = m5.params.allEnums
+./src/SConscript:module_depends = ["m5", "m5.SimObject", "m5.params"]
+./src/arch/alpha/AlphaSystem.py:from m5.params import *
+./src/arch/alpha/AlphaTLB.py:from m5.params import *
+./src/arch/arm/ArmISA.py:from m5.params import *
+./src/arch/arm/ArmNativeTrace.py:from m5.params import *
+./src/arch/arm/ArmSystem.py:from m5.params import *
+./src/arch/arm/ArmTLB.py:from m5.params import *
+./src/arch/mips/MipsCPU.py:from m5.params import *
+./src/arch/mips/MipsISA.py:from m5.params import *
+./src/arch/mips/MipsSystem.py:from m5.params import *
+./src/arch/mips/MipsTLB.py:from m5.params import *
+./src/arch/power/PowerTLB.py:from m5.params import *
+./src/arch/sparc/SparcNativeTrace.py:from m5.params import *
+./src/arch/sparc/SparcSystem.py:from m5.params import *
+./src/arch/sparc/SparcTLB.py:from m5.params import *
+./src/arch/x86/X86LocalApic.py:from m5.params import *
+./src/arch/x86/X86NativeTrace.py:from m5.params import *
+./src/arch/x86/X86System.py:from m5.params import *
+./src/arch/x86/X86TLB.py:from m5.params import *
+./src/arch/x86/bios/ACPI.py:from m5.params import *
+./src/arch/x86/bios/E820.py:from m5.params import *
+./src/arch/x86/bios/IntelMP.py:from m5.params import *
+./src/arch/x86/bios/SMBios.py:from m5.params import *
+./src/base/CPA.py:from m5.params import *
+./src/base/vnc/Vnc.py:from m5.params import *
+./src/cpu/BaseCPU.py:from m5.params import *
+./src/cpu/CheckerCPU.py:from m5.params import *
+./src/cpu/DummyChecker.py:from m5.params import *
+./src/cpu/ExeTracer.py:from m5.params import *
+./src/cpu/FuncUnit.py:from m5.params import *
+./src/cpu/IntelTrace.py:from m5.params import *
+./src/cpu/IntrControl.py:from m5.params import *
+./src/cpu/LegionTrace.py:from m5.params import *
+./src/cpu/NativeTrace.py:from m5.params import *
+./src/cpu/inorder/InOrderCPU.py:from m5.params import *
+./src/cpu/inorder/InOrderTrace.py:from m5.params import *
+./src/cpu/o3/FUPool.py:from m5.params import *
+./src/cpu/o3/FuncUnitConfig.py:from m5.params import *
+./src/cpu/o3/O3CPU.py:from m5.params import *
+./src/cpu/o3/O3Checker.py:from m5.params import *
+./src/cpu/ozone/OzoneCPU.py:from m5.params import *
+./src/cpu/ozone/OzoneChecker.py:from m5.params import *
+./src/cpu/ozone/SimpleOzoneCPU.py:from m5.params import *
+./src/cpu/pred/BranchPredictor.py:from m5.params import *
+./src/cpu/simple/AtomicSimpleCPU.py:from m5.params import *
+./src/cpu/simple/BaseSimpleCPU.py:from m5.params import *
+./src/cpu/simple/TimingSimpleCPU.py:from m5.params import *
+./src/cpu/testers/directedtest/RubyDirectedTester.py:from m5.params import *
+./src/cpu/testers/memtest/MemTest.py:from m5.params import *
+./src/cpu/testers/networktest/NetworkTest.py:from m5.params import *
+./src/cpu/testers/rubytest/RubyTester.py:from m5.params import *
+./src/cpu/testers/traffic_gen/TrafficGen.py:from m5.params import *
+./src/dev/BadDevice.py:from m5.params import *
+./src/dev/CopyEngine.py:from m5.params import *
+./src/dev/Device.py:from m5.params import *
+./src/dev/DiskImage.py:from m5.params import *
+./src/dev/Ethernet.py:from m5.params import *
+./src/dev/Ide.py:from m5.params import *
+./src/dev/Pci.py:from m5.params import *
+./src/dev/Platform.py:from m5.params import *
+./src/dev/SimpleDisk.py:from m5.params import *
+./src/dev/Terminal.py:from m5.params import *
+./src/dev/Uart.py:from m5.params import *
+./src/dev/alpha/AlphaBackdoor.py:from m5.params import *
+./src/dev/alpha/Tsunami.py:from m5.params import *
+./src/dev/arm/Gic.py:from m5.params import *
+./src/dev/arm/RealView.py:from m5.params import *
+./src/dev/mips/Malta.py:from m5.params import *
+./src/dev/sparc/T1000.py:from m5.params import *
+./src/dev/x86/Cmos.py:from m5.params import *
+./src/dev/x86/I8042.py:from m5.params import *
+./src/dev/x86/I82094AA.py:from m5.params import *
+./src/dev/x86/I8237.py:from m5.params import *
+./src/dev/x86/I8254.py:from m5.params import *
+./src/dev/x86/I8259.py:from m5.params import *
+./src/dev/x86/Pc.py:from m5.params import *
+./src/dev/x86/PcSpeaker.py:from m5.params import *
+./src/dev/x86/SouthBridge.py:from m5.params import *
+./src/dev/x86/X86IntPin.py:from m5.params import *
+./src/mem/AbstractMemory.py:from m5.params import *
+./src/mem/AddrMapper.py:from m5.params import *
+./src/mem/Bridge.py:from m5.params import *
+./src/mem/Bus.py:from m5.params import *
+./src/mem/CommMonitor.py:from m5.params import *
+./src/mem/SimpleDRAM.py:from m5.params import *
+./src/mem/SimpleMemory.py:from m5.params import *
+./src/mem/cache/BaseCache.py:from m5.params import *
+./src/mem/cache/prefetch/Prefetcher.py:from m5.params import *
+./src/mem/ruby/network/BasicLink.py:from m5.params import *
+./src/mem/ruby/network/BasicRouter.py:from m5.params import *
+./src/mem/ruby/network/Network.py:from m5.params import *
+./src/mem/ruby/network/fault_model/FaultModel.py:from m5.params import *
+./src/mem/ruby/network/garnet/BaseGarnetNetwork.py:from m5.params import *
+./src/mem/ruby/network/garnet/fixed-pipeline/GarnetLink_d.py:from m5.params import *
+./src/mem/ruby/network/garnet/fixed-pipeline/GarnetNetwork_d.py:from m5.params import *
+./src/mem/ruby/network/garnet/fixed-pipeline/GarnetRouter_d.py:from m5.params import *
+./src/mem/ruby/network/garnet/flexible-pipeline/GarnetLink.py:from m5.params import *
+./src/mem/ruby/network/garnet/flexible-pipeline/GarnetNetwork.py:from m5.params import *
+./src/mem/ruby/network/garnet/flexible-pipeline/GarnetRouter.py:from m5.params import *
+./src/mem/ruby/network/simple/SimpleLink.py:from m5.params import *
+./src/mem/ruby/network/simple/SimpleNetwork.py:from m5.params import *
+./src/mem/ruby/profiler/Profiler.py:from m5.params import *
+./src/mem/ruby/slicc_interface/Controller.py:from m5.params import *
+./src/mem/ruby/structures/RubyPrefetcher.py:from m5.params import *
+./src/mem/ruby/system/Cache.py:from m5.params import *
+./src/mem/ruby/system/DirectoryMemory.py:from m5.params import *
+./src/mem/ruby/system/MemoryControl.py:from m5.params import *
+./src/mem/ruby/system/RubyMemoryControl.py:from m5.params import *
+./src/mem/ruby/system/RubySystem.py:from m5.params import *
+./src/mem/ruby/system/Sequencer.py:from m5.params import *
+./src/mem/ruby/system/WireBuffer.py:from m5.params import *
+./src/mem/slicc/symbols/StateMachine.py:from m5.params import *
+./src/python/SConscript:PySource('m5', 'm5/params.py')
+./src/python/m5/SimObject.py:from m5.params import *
+./src/python/m5/SimObject.py:from m5.params import ParamDesc, VectorParamDesc, \
+./src/python/m5/util/dot_writer.py:            if type(port) is m5.params.PortRef:
+./src/sim/ClockedObject.py:from m5.params import *
+./src/sim/InstTracer.py:from m5.params import *
+./src/sim/Process.py:from m5.params import *
+./src/sim/Root.py:from m5.params import *
+./src/sim/System.py:from m5.params import *
+./simObj_search.log:./src/SConscript:module_depends = ["m5", "m5.SimObject", "m5.params"]
+./simObj_search.log:./src/python/m5/params.py:# MetaSimObject._new_param()); after that point they aren't used.
+./simObj_search.log:./src/python/m5/params.py:def isSimObject(*args, **kwargs):
+./simObj_search.log:./src/python/m5/params.py:    return SimObject.isSimObject(*args, **kwargs)
+./simObj_search.log:./src/python/m5/params.py:def isSimObjectSequence(*args, **kwargs):
+./simObj_search.log:./src/python/m5/params.py:    return SimObject.isSimObjectSequence(*args, **kwargs)
+./simObj_search.log:./src/python/m5/params.py:def isSimObjectClass(*args, **kwargs):
+./simObj_search.log:./src/python/m5/params.py:    return SimObject.isSimObjectClass(*args, **kwargs)
+./simObj_search.log:./src/python/m5/params.py:# Dummy base class to identify types that are legitimate for SimObject
+./simObj_search.log:./src/python/m5/params.py:            ptype = SimObject.allClasses[self.ptype_str]
+./simObj_search.log:./src/python/m5/params.py:            assert isSimObjectClass(ptype)
+./simObj_search.log:./src/python/m5/params.py:            # deferred evaluation of SimObject; continue to defer if
+./simObj_search.log:./src/python/m5/params.py:        if isNullPointer(value) and isSimObjectClass(self.ptype):
+./simObj_search.log:./src/python/m5/params.py:class SimObjectVector(VectorParamValue):
+./simObj_search.log:./src/python/m5/params.py:        return SimObjectVector([v(**kwargs) for v in self])
+./simObj_search.log:./src/python/m5/params.py:    # we can nicely handle iterating over all a SimObject's children
+./simObj_search.log:./src/python/m5/params.py:    # SimObjectVector directly.
+./simObj_search.log:./src/python/m5/params.py:        if isSimObjectSequence(tmp_list):
+./simObj_search.log:./src/python/m5/params.py:            return SimObjectVector(tmp_list)
+./simObj_search.log:./src/python/m5/params.py:            # if name isn't defined yet, assume it's a SimObject, and
+./simObj_search.log:./src/python/m5/params.py:# SimObject is required.
+./simObj_search.log:./src/python/m5/params.py:class NullSimObject(object):
+./simObj_search.log:./src/python/m5/params.py:NULL = NullSimObject()
+./simObj_search.log:./src/python/m5/params.py:    return isinstance(value, NullSimObject)
+./simObj_search.log:./src/python/m5/params.py:# particular SimObject.
+./simObj_search.log:./src/python/m5/params.py:        assert(isSimObject(simobj) or isSimObjectClass(simobj))
+./simObj_search.log:./src/python/m5/params.py:    # SimObject.__setattr__ as a result of a port assignment, e.g.,
+./simObj_search.log:./src/python/m5/params.py:        assert(isSimObject(newRef.simobj))
+./simObj_search.log:./src/python/m5/params.py:        assert(isSimObject(simobj) or isSimObjectClass(simobj))
+./simObj_search.log:./src/python/m5/params.py:        assert(isSimObject(newRef.simobj))
+./simObj_search.log:./src/python/m5/params.py:# logical port in the SimObject class, not a particular port on a
+./simObj_search.log:./src/python/m5/params.py:# SimObject instance.  The latter are represented by PortRef objects.
+./simObj_search.log:./src/python/m5/params.py:    # Generate a PortRef for this port on the given SimObject with the
+./simObj_search.log:./src/python/m5/params.py:    # Connect an instance of this port (on the given SimObject with
+./simObj_search.log:./src/python/m5/params.py:import SimObject

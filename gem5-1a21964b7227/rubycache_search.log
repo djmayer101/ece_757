@@ -1,0 +1,193 @@
+./configs/ruby/MESI_CMP_directory.py:class L1Cache(RubyCache):
+./configs/ruby/MESI_CMP_directory.py:class L2Cache(RubyCache):
+./configs/ruby/MI_example.py:class Cache(RubyCache):
+./configs/ruby/MOESI_CMP_directory.py:class L1Cache(RubyCache):
+./configs/ruby/MOESI_CMP_directory.py:class L2Cache(RubyCache):
+./configs/ruby/MOESI_CMP_token.py:class L1Cache(RubyCache):
+./configs/ruby/MOESI_CMP_token.py:class L2Cache(RubyCache):
+./configs/ruby/MOESI_hammer.py:class L1Cache(RubyCache):
+./configs/ruby/MOESI_hammer.py:class L2Cache(RubyCache):
+./configs/ruby/MOESI_hammer.py:class ProbeFilter(RubyCache):
+./configs/ruby/Network_test.py:class Cache(RubyCache):
+./src/mem/SConscript:DebugFlag('RubyCache')
+./src/mem/SConscript:DebugFlag('RubyCacheTrace')
+./src/mem/SConscript:    'RubyGenerated', 'RubySlicc', 'RubySystem', 'RubyCache',
+./src/mem/SConscript:    'RubyMemory', 'RubyDma', 'RubyPort', 'RubySequencer', 'RubyCacheTrace',
+./src/mem/ruby/recorder/CacheRecorder.cc:#include "debug/RubyCacheTrace.hh"
+./src/mem/ruby/recorder/CacheRecorder.cc:        DPRINTF(RubyCacheTrace, "Flushing %s\n", *rec);
+./src/mem/ruby/recorder/CacheRecorder.cc:        DPRINTF(RubyCacheTrace, "Issuing %s\n", *traceRecord);
+./src/mem/ruby/system/Cache.py:class RubyCache(SimObject):
+./src/mem/ruby/system/Cache.py:    type = 'RubyCache'
+./src/mem/ruby/system/CacheMemory.cc:#include "debug/RubyCache.hh"
+./src/mem/ruby/system/CacheMemory.cc:#include "debug/RubyCacheTrace.hh"
+./src/mem/ruby/system/CacheMemory.cc:RubyCacheParams::create()
+./src/mem/ruby/system/CacheMemory.cc:    DPRINTF(RubyCache, "address: %s\n", address);
+./src/mem/ruby/system/CacheMemory.cc:    DPRINTF(RubyCache, "address: %s\n", address);
+./src/mem/ruby/system/CacheMemory.cc:        DPRINTF(RubyCache, "No tag match for address: %s\n", address);
+./src/mem/ruby/system/CacheMemory.cc:    DPRINTF(RubyCache, "address: %s found\n", address);
+./src/mem/ruby/system/CacheMemory.cc:    DPRINTF(RubyCache, "address: %s\n", address);
+./src/mem/ruby/system/CacheMemory.cc:            DPRINTF(RubyCache, "Allocate clearing lock for addr: %x\n",
+./src/mem/ruby/system/CacheMemory.cc:    DPRINTF(RubyCache, "address: %s\n", address);
+./src/mem/ruby/system/CacheMemory.cc:    DPRINTF(RubyCacheTrace, "%s: %lli blocks of %lli total blocks"
+./src/mem/ruby/system/CacheMemory.cc:    DPRINTF(RubyCache, "Setting Lock for addr: %x to %d\n", address, context);
+./src/mem/ruby/system/CacheMemory.cc:    DPRINTF(RubyCache, "Clear Lock for addr: %x\n", address);
+./src/mem/ruby/system/CacheMemory.cc:    DPRINTF(RubyCache, "Testing Lock for addr: %llx cur %d con %d\n",
+./src/mem/ruby/system/CacheMemory.hh:#include "params/RubyCache.hh"
+./src/mem/ruby/system/CacheMemory.hh:    typedef RubyCacheParams Params;
+./src/mem/ruby/system/DirectoryMemory.cc:#include "debug/RubyCache.hh"
+./src/mem/ruby/system/DirectoryMemory.cc:    DPRINTF(RubyCache, "Looking up address: %s\n", address);
+./src/mem/ruby/system/DirectoryMemory.cc:    DPRINTF(RubyCache, "Looking up address: %s\n", address);
+./src/mem/ruby/system/MemoryVector.hh:#include "debug/RubyCacheTrace.hh"
+./src/mem/ruby/system/MemoryVector.hh:    DPRINTF(RubyCacheTrace, "collating %d pages\n", m_num_pages);
+./src/mem/ruby/system/MemoryVector.hh:    DPRINTF(RubyCacheTrace, "Populating %d pages\n", num_pages);
+./src/mem/ruby/system/Sequencer.py:    icache = Param.RubyCache("")
+./src/mem/ruby/system/Sequencer.py:    dcache = Param.RubyCache("")
+./src/mem/ruby/system/SparseMemory.cc:#include "debug/RubyCache.hh"
+./src/mem/ruby/system/SparseMemory.cc:    DPRINTF(RubyCache, "address: %s\n", address);
+./src/mem/ruby/system/SparseMemory.cc:        DPRINTF(RubyCache, "level: %d, lowBit: %d, highBit - 1: %d, "
+./src/mem/ruby/system/SparseMemory.cc:            DPRINTF(RubyCache, "Not found\n");
+./src/mem/ruby/system/SparseMemory.cc:    DPRINTF(RubyCache, "Entry found\n");
+./src/mem/ruby/system/SparseMemory.cc:    DPRINTF(RubyCache, "address: %s, curInfo.level: %d, curInfo.lowBit: %d, "
+./src/mem/ruby/system/SparseMemory.cc:        DPRINTF(RubyCache, "level: %d, lowBit: %d, highBit - 1: %d, "
+./src/mem/ruby/system/SparseMemory.cc:            DPRINTF(RubyCache, "Not found\n");
+./src/mem/ruby/system/System.cc:#include "debug/RubyCacheTrace.hh"
+./src/mem/ruby/system/System.cc:    DPRINTF(RubyCacheTrace, "Recording Cache Trace\n");
+./src/mem/ruby/system/System.cc:    DPRINTF(RubyCacheTrace, "Cache Trace Complete\n");
+./src/mem/ruby/system/System.cc:    DPRINTF(RubyCacheTrace, "Recording current tick %ld and event queue\n",
+./src/mem/ruby/system/System.cc:    DPRINTF(RubyCacheTrace, "Starting cache flush\n");
+./src/mem/ruby/system/System.cc:    DPRINTF(RubyCacheTrace, "Cache flush complete\n");
+./src/mem/slicc/symbols/StateMachine.py:                    "CacheMemory": "RubyCache",
+./tests/long/fs/10.linux-boot/ref/x86/linux/pc-simple-timing-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/long/fs/10.linux-boot/ref/x86/linux/pc-simple-timing-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/long/fs/10.linux-boot/ref/x86/linux/pc-simple-timing-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/long/fs/10.linux-boot/ref/x86/linux/pc-simple-timing-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/long/fs/10.linux-boot/ref/x86/linux/pc-simple-timing-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/linux/simple-timing-ruby/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/alpha/tru64/simple-timing-ruby/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/mips/linux/simple-timing-ruby/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/sparc/linux/simple-timing-ruby/config.ini:type=RubyCache
+./tests/quick/se/00.hello/ref/x86/linux/simple-timing-ruby/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby/config.ini:type=RubyCache
+./tests/quick/se/50.memtest/ref/alpha/linux/memtest-ruby/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby-MESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby-MOESI_CMP_directory/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby-MOESI_CMP_token/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby-MOESI_hammer/config.ini:type=RubyCache
+./tests/quick/se/60.rubytest/ref/alpha/linux/rubytest-ruby/config.ini:type=RubyCache

@@ -1,0 +1,648 @@
+./configs/common/FSConfig.py:    # Append an underscore to dma_devices to avoid the SimObjectVector check.
+./configs/ruby/Ruby.py:    # Give the system port proxy a SimObject parent without creating a
+./configs/ruby/Ruby.py:    # gem5 SimObject defined in src/mem/ruby/network/Network.py
+./src/SConscript:class SimObject(PySource):
+./src/SConscript:    '''Add a SimObject python file as a python source object and add
+./src/SConscript:        super(SimObject, self).__init__('m5.objects', source, **guards)
+./src/SConscript:            raise AttributeError, "Too late to call SimObject now."
+./src/SConscript:        bisect.insort_right(SimObject.modnames, self.modname)
+./src/SConscript:Export('SimObject')
+./src/SConscript:# Prevent any SimObjects from being added after this point, they
+./src/SConscript:SimObject.fixed = True
+./src/SConscript:import m5.SimObject
+./src/SConscript:m5.SimObject.clear()
+./src/SConscript:# tree itself.  We can't have SimObjects added after this point or
+./src/SConscript:for modname in SimObject.modnames:
+./src/SConscript:sim_objects = m5.SimObject.allClasses
+./src/SConscript:if m5.SimObject.noCxxHeader:
+./src/SConscript:        "warning: At least one SimObject lacks a header specification. " \
+./src/SConscript:# or because they're SimObjects (which get swigged independently).
+./src/SConscript:        # current version of SimObject.allClasses, but when scons
+./src/SConscript:        # SimObject.allClasses will have been loaded
+./src/SConscript:module_depends = ["m5", "m5.SimObject", "m5.params"]
+./src/SConscript:# Create all of the SimObject param headers and enum headers
+./src/SConscript:def createSimObjectParamStruct(target, source, env):
+./src/SConscript:def createSimObjectSwigWrapper(target, source, env):
+./src/SConscript:# Generate all of the SimObject param C++ struct header files
+./src/SConscript:                MakeAction(createSimObjectParamStruct, Transform("SO PARAM")))
+./src/SConscript:# Generate SimObject SWIG wrapper files
+./src/SConscript:                MakeAction(createSimObjectSwigWrapper, Transform("SO SWIG")))
+./src/arch/alpha/AlphaISA.py:from m5.SimObject import SimObject
+./src/arch/alpha/AlphaISA.py:class AlphaISA(SimObject):
+./src/arch/alpha/AlphaInterrupts.py:from m5.SimObject import SimObject
+./src/arch/alpha/AlphaInterrupts.py:class AlphaInterrupts(SimObject):
+./src/arch/alpha/AlphaTLB.py:from m5.SimObject import SimObject
+./src/arch/alpha/SConscript:    SimObject('AlphaInterrupts.py')
+./src/arch/alpha/SConscript:    SimObject('AlphaISA.py')
+./src/arch/alpha/SConscript:    SimObject('AlphaSystem.py')
+./src/arch/alpha/SConscript:    SimObject('AlphaTLB.py')
+./src/arch/alpha/interrupts.hh:class Interrupts : public SimObject
+./src/arch/alpha/interrupts.hh:    Interrupts(Params * p) : SimObject(p), cpu(NULL)
+./src/arch/alpha/isa.cc:    : SimObject(p)
+./src/arch/alpha/isa.hh:    class ISA : public SimObject
+./src/arch/alpha/isa.hh:        using SimObject::startup;
+./src/arch/arm/ArmISA.py:from m5.SimObject import SimObject
+./src/arch/arm/ArmISA.py:class ArmISA(SimObject):
+./src/arch/arm/ArmInterrupts.py:from m5.SimObject import SimObject
+./src/arch/arm/ArmInterrupts.py:class ArmInterrupts(SimObject):
+./src/arch/arm/ArmNativeTrace.py:from m5.SimObject import SimObject
+./src/arch/arm/ArmTLB.py:from m5.SimObject import SimObject
+./src/arch/arm/ArmTLB.py:class ArmTLB(SimObject):
+./src/arch/arm/SConscript:    SimObject('ArmInterrupts.py')
+./src/arch/arm/SConscript:    SimObject('ArmISA.py')
+./src/arch/arm/SConscript:    SimObject('ArmNativeTrace.py')
+./src/arch/arm/SConscript:    SimObject('ArmSystem.py')
+./src/arch/arm/SConscript:    SimObject('ArmTLB.py')
+./src/arch/arm/interrupts.hh:class Interrupts : public SimObject
+./src/arch/arm/interrupts.hh:    Interrupts(Params * p) : SimObject(p), cpu(NULL)
+./src/arch/arm/isa.cc:    : SimObject(p)
+./src/arch/arm/isa.hh:    class ISA : public SimObject
+./src/arch/arm/isa.hh:        using SimObject::startup;
+./src/arch/arm/table_walker.hh:    struct WalkerState //: public SimObject
+./src/arch/mips/MipsISA.py:from m5.SimObject import SimObject
+./src/arch/mips/MipsISA.py:class MipsISA(SimObject):
+./src/arch/mips/MipsInterrupts.py:from m5.SimObject import SimObject
+./src/arch/mips/MipsInterrupts.py:class MipsInterrupts(SimObject):
+./src/arch/mips/MipsTLB.py:from m5.SimObject import SimObject
+./src/arch/mips/SConscript:    SimObject('MipsInterrupts.py')
+./src/arch/mips/SConscript:    SimObject('MipsISA.py')
+./src/arch/mips/SConscript:    SimObject('MipsSystem.py')
+./src/arch/mips/SConscript:    SimObject('MipsTLB.py')
+./src/arch/mips/interrupts.hh:class Interrupts : public SimObject
+./src/arch/mips/interrupts.hh:    Interrupts(Params * p) : SimObject(p)
+./src/arch/mips/isa.cc:    : SimObject(p),
+./src/arch/mips/isa.hh:    class ISA : public SimObject
+./src/arch/mips/isa.hh:        using SimObject::startup;
+./src/arch/power/PowerISA.py:from m5.SimObject import SimObject
+./src/arch/power/PowerISA.py:class PowerISA(SimObject):
+./src/arch/power/PowerInterrupts.py:from m5.SimObject import SimObject
+./src/arch/power/PowerInterrupts.py:class PowerInterrupts(SimObject):
+./src/arch/power/PowerTLB.py:from m5.SimObject import SimObject
+./src/arch/power/PowerTLB.py:class PowerTLB(SimObject):
+./src/arch/power/SConscript:    SimObject('PowerInterrupts.py')
+./src/arch/power/SConscript:    SimObject('PowerISA.py')
+./src/arch/power/SConscript:    SimObject('PowerTLB.py')
+./src/arch/power/interrupts.hh:class Interrupts : public SimObject
+./src/arch/power/interrupts.hh:    Interrupts(Params * p) : SimObject(p), cpu(NULL)
+./src/arch/power/isa.cc:    : SimObject(p)
+./src/arch/power/isa.hh:class ISA : public SimObject
+./src/arch/power/isa.hh:    using SimObject::startup;
+./src/arch/sparc/SConscript:    SimObject('SparcInterrupts.py')
+./src/arch/sparc/SConscript:    SimObject('SparcISA.py')
+./src/arch/sparc/SConscript:    SimObject('SparcNativeTrace.py')
+./src/arch/sparc/SConscript:    SimObject('SparcSystem.py')
+./src/arch/sparc/SConscript:    SimObject('SparcTLB.py')
+./src/arch/sparc/SparcISA.py:from m5.SimObject import SimObject
+./src/arch/sparc/SparcISA.py:class SparcISA(SimObject):
+./src/arch/sparc/SparcInterrupts.py:from m5.SimObject import SimObject
+./src/arch/sparc/SparcInterrupts.py:class SparcInterrupts(SimObject):
+./src/arch/sparc/SparcNativeTrace.py:from m5.SimObject import SimObject
+./src/arch/sparc/SparcTLB.py:from m5.SimObject import SimObject
+./src/arch/sparc/interrupts.hh:class Interrupts : public SimObject
+./src/arch/sparc/interrupts.hh:    Interrupts(Params * p) : SimObject(p), cpu(NULL)
+./src/arch/sparc/isa.cc:    : SimObject(p)
+./src/arch/sparc/isa.hh:class ISA : public SimObject
+./src/arch/sparc/isa.hh:    using SimObject::startup;
+./src/arch/x86/SConscript:    SimObject('X86ISA.py')
+./src/arch/x86/SConscript:    SimObject('X86LocalApic.py')
+./src/arch/x86/SConscript:    SimObject('X86NativeTrace.py')
+./src/arch/x86/SConscript:    SimObject('X86System.py')
+./src/arch/x86/SConscript:    SimObject('X86TLB.py')
+./src/arch/x86/X86ISA.py:from m5.SimObject import SimObject
+./src/arch/x86/X86ISA.py:class X86ISA(SimObject):
+./src/arch/x86/X86NativeTrace.py:from m5.SimObject import SimObject
+./src/arch/x86/bios/ACPI.py:from m5.SimObject import SimObject
+./src/arch/x86/bios/ACPI.py:class X86ACPISysDescTable(SimObject):
+./src/arch/x86/bios/ACPI.py:class X86ACPIRSDP(SimObject):
+./src/arch/x86/bios/E820.py:from m5.SimObject import SimObject
+./src/arch/x86/bios/E820.py:class X86E820Entry(SimObject):
+./src/arch/x86/bios/E820.py:class X86E820Table(SimObject):
+./src/arch/x86/bios/IntelMP.py:from m5.SimObject import SimObject
+./src/arch/x86/bios/IntelMP.py:class X86IntelMPFloatingPointer(SimObject):
+./src/arch/x86/bios/IntelMP.py:class X86IntelMPConfigTable(SimObject):
+./src/arch/x86/bios/IntelMP.py:class X86IntelMPBaseConfigEntry(SimObject):
+./src/arch/x86/bios/IntelMP.py:class X86IntelMPExtConfigEntry(SimObject):
+./src/arch/x86/bios/SConscript:    SimObject('E820.py')
+./src/arch/x86/bios/SConscript:    SimObject('SMBios.py')
+./src/arch/x86/bios/SConscript:    SimObject('IntelMP.py')
+./src/arch/x86/bios/SConscript:    SimObject('ACPI.py')
+./src/arch/x86/bios/SMBios.py:from m5.SimObject import SimObject
+./src/arch/x86/bios/SMBios.py:class X86SMBiosSMBiosStructure(SimObject):
+./src/arch/x86/bios/SMBios.py:class X86SMBiosSMBiosTable(SimObject):
+./src/arch/x86/bios/acpi.cc:X86ISA::ACPI::RSDP::RSDP(Params *p) : SimObject(p), oemID(p->oem_id),
+./src/arch/x86/bios/acpi.cc:        const char * _signature, uint8_t _revision) : SimObject(p),
+./src/arch/x86/bios/acpi.hh:class RSDP : public SimObject
+./src/arch/x86/bios/acpi.hh:class SysDescTable : public SimObject
+./src/arch/x86/bios/e820.hh:    class E820Entry : public SimObject
+./src/arch/x86/bios/e820.hh:            SimObject(p), addr(p->addr), size(p->size), type(p->range_type)
+./src/arch/x86/bios/e820.hh:    class E820Table : public SimObject
+./src/arch/x86/bios/e820.hh:        E820Table(Params *p) : SimObject(p), entries(p->entries)
+./src/arch/x86/bios/intelmp.cc:    SimObject(p), tableAddr(0), specRev(p->spec_rev),
+./src/arch/x86/bios/intelmp.cc:    SimObject(p), type(_type)
+./src/arch/x86/bios/intelmp.cc:    SimObject(p), type(_type), length(_length)
+./src/arch/x86/bios/intelmp.cc:X86ISA::IntelMP::ConfigTable::ConfigTable(Params * p) : SimObject(p),
+./src/arch/x86/bios/intelmp.hh:class FloatingPointer : public SimObject
+./src/arch/x86/bios/intelmp.hh:class BaseConfigEntry : public SimObject
+./src/arch/x86/bios/intelmp.hh:class ExtConfigEntry : public SimObject
+./src/arch/x86/bios/intelmp.hh:class ConfigTable : public SimObject
+./src/arch/x86/bios/smbios.cc:    SimObject(p), type(_type), handle(0), stringFields(false)
+./src/arch/x86/bios/smbios.cc:    SimObject(p), structures(p->structures)
+./src/arch/x86/bios/smbios.hh:class SMBiosStructure : public SimObject
+./src/arch/x86/bios/smbios.hh:class SMBiosTable : public SimObject
+./src/arch/x86/interrupts.cc:    // that it inherited from IntDev.  Note IntDev is not a SimObject itself.
+./src/arch/x86/isa.cc:    : SimObject(p)
+./src/arch/x86/isa.hh:    class ISA : public SimObject
+./src/arch/x86/isa.hh:        using SimObject::startup;
+./src/base/CPA.py:from m5.SimObject import SimObject
+./src/base/CPA.py:class CPA(SimObject):
+./src/base/SConscript:    SimObject('CPA.py')
+./src/base/cp_annotate.cc:    : SimObject(p), numSm(0), numSmt(0), numSys(0), numQs(0), conId(0)
+./src/base/cp_annotate.cc:        SimObject *sptr;
+./src/base/cp_annotate.hh:class CPA : SimObject
+./src/base/vnc/SConscript:SimObject('Vnc.py')
+./src/base/vnc/Vnc.py:from m5.SimObject import SimObject
+./src/base/vnc/Vnc.py:class VncInput(SimObject):
+./src/base/vnc/vncinput.cc:    : SimObject(p), keyboard(NULL), mouse(NULL),
+./src/base/vnc/vncinput.hh:class VncInput : public SimObject
+./src/cpu/ExeTracer.py:from m5.SimObject import SimObject
+./src/cpu/FuncUnit.py:from m5.SimObject import SimObject
+./src/cpu/FuncUnit.py:class OpDesc(SimObject):
+./src/cpu/FuncUnit.py:class FUDesc(SimObject):
+./src/cpu/IntelTrace.py:from m5.SimObject import SimObject
+./src/cpu/IntrControl.py:from m5.SimObject import SimObject
+./src/cpu/IntrControl.py:class IntrControl(SimObject):
+./src/cpu/LegionTrace.py:from m5.SimObject import SimObject
+./src/cpu/NativeTrace.py:from m5.SimObject import SimObject
+./src/cpu/SConscript:SimObject('CheckerCPU.py')
+./src/cpu/SConscript:SimObject('BaseCPU.py')
+./src/cpu/SConscript:SimObject('FuncUnit.py')
+./src/cpu/SConscript:SimObject('ExeTracer.py')
+./src/cpu/SConscript:SimObject('IntelTrace.py')
+./src/cpu/SConscript:SimObject('IntrControl.py')
+./src/cpu/SConscript:SimObject('NativeTrace.py')
+./src/cpu/SConscript:    SimObject('LegionTrace.py')
+./src/cpu/SConscript:SimObject('DummyChecker.py')
+./src/cpu/dummy_checker.hh: * Specific non-templated derived class used for SimObject configuration.
+./src/cpu/func_unit.cc://  The SimObjects we use to get the FU information into the simulator
+./src/cpu/func_unit.hh:class OpDesc : public SimObject
+./src/cpu/func_unit.hh:        : SimObject(p), opClass(p->opClass), opLat(p->opLat),
+./src/cpu/func_unit.hh:class FUDesc : public SimObject
+./src/cpu/func_unit.hh:        : SimObject(p), opDescList(p->opList), number(p->count) {};
+./src/cpu/inorder/InOrderTrace.py:from m5.SimObject import SimObject
+./src/cpu/inorder/SConscript:        SimObject('InOrderCPU.py')
+./src/cpu/inorder/SConscript:        SimObject('InOrderTrace.py')
+./src/cpu/intr_control.cc:    : SimObject(p), sys(p->sys)
+./src/cpu/intr_control.hh:class IntrControl : public SimObject
+./src/cpu/o3/FUPool.py:from m5.SimObject import SimObject
+./src/cpu/o3/FUPool.py:class FUPool(SimObject):
+./src/cpu/o3/FuncUnitConfig.py:from m5.SimObject import SimObject
+./src/cpu/o3/SConscript:    SimObject('FUPool.py')
+./src/cpu/o3/SConscript:    SimObject('FuncUnitConfig.py')
+./src/cpu/o3/SConscript:    SimObject('O3CPU.py')
+./src/cpu/o3/SConscript:    SimObject('O3Checker.py')
+./src/cpu/o3/checker.hh: * Specific non-templated derived class used for SimObject configuration.
+./src/cpu/o3/fu_pool.cc:    : SimObject(p)
+./src/cpu/o3/fu_pool.cc://  The SimObjects we use to get the FU information into the simulator
+./src/cpu/o3/fu_pool.hh:class FUPool : public SimObject
+./src/cpu/ozone/SConscript:    SimObject('OzoneCPU.py')
+./src/cpu/ozone/SConscript:    SimObject('SimpleOzoneCPU.py')
+./src/cpu/ozone/SConscript:    SimObject('OzoneChecker.py')
+./src/cpu/ozone/checker_builder.cc: * Specific non-templated derived class used for SimObject configuration.
+./src/cpu/pred/BranchPredictor.py:from m5.SimObject import SimObject
+./src/cpu/pred/BranchPredictor.py:class BranchPredictor(SimObject):
+./src/cpu/pred/SConscript:    SimObject('BranchPredictor.py')
+./src/cpu/pred/bpred_unit.hh:class BPredUnit : public SimObject
+./src/cpu/pred/bpred_unit_impl.hh:    : SimObject(params),
+./src/cpu/simple/SConscript:    SimObject('AtomicSimpleCPU.py')
+./src/cpu/simple/SConscript:    SimObject('TimingSimpleCPU.py')
+./src/cpu/simple/SConscript:    SimObject('BaseSimpleCPU.py')
+./src/cpu/testers/directedtest/DirectedGenerator.cc:    : SimObject(p),
+./src/cpu/testers/directedtest/DirectedGenerator.hh:class DirectedGenerator : public SimObject 
+./src/cpu/testers/directedtest/RubyDirectedTester.py:from m5.SimObject import SimObject
+./src/cpu/testers/directedtest/RubyDirectedTester.py:class DirectedGenerator(SimObject):
+./src/cpu/testers/directedtest/SConscript:SimObject('RubyDirectedTester.py')
+./src/cpu/testers/memtest/SConscript:SimObject('MemTest.py')
+./src/cpu/testers/networktest/SConscript:SimObject('NetworkTest.py')
+./src/cpu/testers/rubytest/SConscript:SimObject('RubyTester.py')
+./src/cpu/testers/traffic_gen/SConscript:    SimObject('TrafficGen.py')
+./src/cpu/trace/opt_cpu.cc:    : SimObject(name), tickEvent(this), trace(_trace),
+./src/cpu/trace/opt_cpu.hh:class OptCPU : public SimObject
+./src/cpu/trace/reader/mem_trace_reader.hh:class MemTraceReader : public SimObject
+./src/cpu/trace/reader/mem_trace_reader.hh:    MemTraceReader(const std::string &name) : SimObject(name) {}
+./src/cpu/trace/trace_cpu.cc:    : SimObject(name), icacheInterface(icache_interface),
+./src/cpu/trace/trace_cpu.hh:class TraceCPU : public SimObject
+./src/dev/CopyEngine.py:from m5.SimObject import SimObject
+./src/dev/DiskImage.py:from m5.SimObject import SimObject
+./src/dev/DiskImage.py:class DiskImage(SimObject):
+./src/dev/Ethernet.py:from m5.SimObject import SimObject
+./src/dev/Ethernet.py:class EtherObject(SimObject):
+./src/dev/Ethernet.py:class EtherDump(SimObject):
+./src/dev/Ide.py:from m5.SimObject import SimObject
+./src/dev/Ide.py:class IdeDisk(SimObject):
+./src/dev/Pci.py:from m5.SimObject import SimObject
+./src/dev/Platform.py:from m5.SimObject import SimObject
+./src/dev/Platform.py:class Platform(SimObject):
+./src/dev/SConscript:SimObject('BadDevice.py')
+./src/dev/SConscript:SimObject('CopyEngine.py')
+./src/dev/SConscript:SimObject('Device.py')
+./src/dev/SConscript:SimObject('DiskImage.py')
+./src/dev/SConscript:SimObject('Ethernet.py')
+./src/dev/SConscript:SimObject('Ide.py')
+./src/dev/SConscript:SimObject('Pci.py')
+./src/dev/SConscript:SimObject('Platform.py')
+./src/dev/SConscript:SimObject('SimpleDisk.py')
+./src/dev/SConscript:SimObject('Terminal.py')
+./src/dev/SConscript:SimObject('Uart.py')
+./src/dev/SimpleDisk.py:from m5.SimObject import SimObject
+./src/dev/SimpleDisk.py:class SimpleDisk(SimObject):
+./src/dev/Terminal.py:from m5.SimObject import SimObject
+./src/dev/Terminal.py:class Terminal(SimObject):
+./src/dev/alpha/SConscript:    SimObject('AlphaBackdoor.py')
+./src/dev/alpha/SConscript:    SimObject('Tsunami.py')
+./src/dev/arm/SConscript:    SimObject('Gic.py')
+./src/dev/arm/SConscript:    SimObject('RealView.py')
+./src/dev/disk_image.hh:class DiskImage : public SimObject
+./src/dev/disk_image.hh:    DiskImage(const Params *p) : SimObject(p), initialized(false) {}
+./src/dev/etherdevice.hh: * SimObjects, we need to reflect this in the C++ object hierarchy. If
+./src/dev/etherdump.cc:    : SimObject(p), stream(simout.create(p->file, true)),
+./src/dev/etherdump.hh:class EtherDump : public SimObject
+./src/dev/etherobject.hh:class EtherObject : public SimObject
+./src/dev/etherobject.hh:        : SimObject(params) {}
+./src/dev/ide_disk.cc:    : SimObject(p), ctrl(NULL), image(p->image), diskDelay(p->delay),
+./src/dev/ide_disk.hh:class IdeDisk : public SimObject
+./src/dev/mips/SConscript:    SimObject('Malta.py')
+./src/dev/platform.cc:    : SimObject(p), intrctrl(p->intrctrl)
+./src/dev/platform.hh:class Platform : public SimObject
+./src/dev/simple_disk.cc:    : SimObject(p), system(p->system), image(p->disk)
+./src/dev/simple_disk.hh:class SimpleDisk : public SimObject
+./src/dev/sparc/SConscript:    SimObject('T1000.py')
+./src/dev/terminal.cc:    : SimObject(p), listenEvent(NULL), dataEvent(NULL), number(p->number),
+./src/dev/terminal.hh:class Terminal : public SimObject
+./src/dev/x86/SConscript:    SimObject('Pc.py')
+./src/dev/x86/SConscript:    SimObject('SouthBridge.py')
+./src/dev/x86/SConscript:    SimObject('Cmos.py')
+./src/dev/x86/SConscript:    SimObject('I8259.py')
+./src/dev/x86/SConscript:    SimObject('I8254.py')
+./src/dev/x86/SConscript:    SimObject('I8237.py')
+./src/dev/x86/SConscript:    SimObject('I8042.py')
+./src/dev/x86/SConscript:    SimObject('PcSpeaker.py')
+./src/dev/x86/SConscript:    SimObject('I82094AA.py')
+./src/dev/x86/SConscript:    SimObject('X86IntPin.py')
+./src/dev/x86/SouthBridge.py:from m5.SimObject import SimObject
+./src/dev/x86/SouthBridge.py:class SouthBridge(SimObject):
+./src/dev/x86/X86IntPin.py:from m5.SimObject import SimObject
+./src/dev/x86/X86IntPin.py:class X86IntSourcePin(SimObject):
+./src/dev/x86/X86IntPin.py:class X86IntSinkPin(SimObject):
+./src/dev/x86/X86IntPin.py:    device = Param.SimObject("Device this pin belongs to")
+./src/dev/x86/X86IntPin.py:class X86IntLine(SimObject):
+./src/dev/x86/i82094aa.cc:    // from IntDev.  Note IntDev is not a SimObject itself.
+./src/dev/x86/intdev.hh:class IntSinkPin : public SimObject
+./src/dev/x86/intdev.hh:    IntSinkPin(Params *p) : SimObject(p),
+./src/dev/x86/intdev.hh:class IntSourcePin : public SimObject
+./src/dev/x86/intdev.hh:    IntSourcePin(Params *p) : SimObject(p)
+./src/dev/x86/intdev.hh:class IntLine : public SimObject
+./src/dev/x86/intdev.hh:    IntLine(Params *p) : SimObject(p), source(p->source), sink(p->sink)
+./src/dev/x86/south_bridge.cc:SouthBridge::SouthBridge(const Params *p) : SimObject(p),
+./src/dev/x86/south_bridge.hh:class SouthBridge : public SimObject
+./src/mem/SConscript:    SimObject('CommMonitor.py')
+./src/mem/SConscript:SimObject('AddrMapper.py')
+./src/mem/SConscript:SimObject('Bridge.py')
+./src/mem/SConscript:SimObject('Bus.py')
+./src/mem/SConscript:SimObject('MemObject.py')
+./src/mem/SConscript:    SimObject('AbstractMemory.py')
+./src/mem/SConscript:    SimObject('SimpleMemory.py')
+./src/mem/SConscript:    SimObject('SimpleDRAM.py')
+./src/mem/cache/SConscript:SimObject('BaseCache.py')
+./src/mem/cache/prefetch/SConscript:SimObject('Prefetcher.py')
+./src/mem/protocol/SConscript:        SimObject(f)
+./src/mem/ruby/network/BasicLink.cc:    : SimObject(p)
+./src/mem/ruby/network/BasicLink.hh:class BasicLink : public SimObject
+./src/mem/ruby/network/BasicLink.py:from m5.SimObject import SimObject
+./src/mem/ruby/network/BasicLink.py:class BasicLink(SimObject):
+./src/mem/ruby/network/Network.py:from m5.SimObject import SimObject
+./src/mem/ruby/network/Network.py:class Topology(SimObject):
+./src/mem/ruby/network/SConscript:SimObject('BasicLink.py')
+./src/mem/ruby/network/SConscript:SimObject('BasicRouter.py')
+./src/mem/ruby/network/SConscript:SimObject('Network.py')
+./src/mem/ruby/network/Topology.cc:    : SimObject(p)
+./src/mem/ruby/network/Topology.hh:class Topology : public SimObject
+./src/mem/ruby/network/fault_model/FaultModel.cc:FaultModel::FaultModel(const Params *p) : SimObject(p)
+./src/mem/ruby/network/fault_model/FaultModel.hh:class FaultModel : public SimObject
+./src/mem/ruby/network/fault_model/FaultModel.py:from m5.SimObject import SimObject
+./src/mem/ruby/network/fault_model/FaultModel.py:class FaultModel(SimObject):
+./src/mem/ruby/network/fault_model/SConscript:SimObject('FaultModel.py')
+./src/mem/ruby/network/garnet/SConscript:SimObject('BaseGarnetNetwork.py')
+./src/mem/ruby/network/garnet/fixed-pipeline/SConscript:SimObject('GarnetLink_d.py')
+./src/mem/ruby/network/garnet/fixed-pipeline/SConscript:SimObject('GarnetNetwork_d.py')
+./src/mem/ruby/network/garnet/fixed-pipeline/SConscript:SimObject('GarnetRouter_d.py')
+./src/mem/ruby/network/garnet/flexible-pipeline/SConscript:SimObject('GarnetLink.py')
+./src/mem/ruby/network/garnet/flexible-pipeline/SConscript:SimObject('GarnetNetwork.py')
+./src/mem/ruby/network/garnet/flexible-pipeline/SConscript:SimObject('GarnetRouter.py')
+./src/mem/ruby/network/simple/SConscript:SimObject('SimpleLink.py')
+./src/mem/ruby/network/simple/SConscript:SimObject('SimpleNetwork.py')
+./src/mem/ruby/network/simple/SimpleLink.py:from m5.SimObject import SimObject
+./src/mem/ruby/profiler/Profiler.cc:    : SimObject(p), m_event(this)
+./src/mem/ruby/profiler/Profiler.hh:class Profiler : public SimObject
+./src/mem/ruby/profiler/Profiler.py:from m5.SimObject import SimObject
+./src/mem/ruby/profiler/Profiler.py:class RubyProfiler(SimObject):
+./src/mem/ruby/profiler/SConscript:SimObject('Profiler.py')
+./src/mem/ruby/slicc_interface/SConscript:SimObject('Controller.py')
+./src/mem/ruby/structures/Prefetcher.cc:    : SimObject(p), m_num_streams(p->num_streams),
+./src/mem/ruby/structures/Prefetcher.hh:class Prefetcher : public SimObject
+./src/mem/ruby/structures/RubyPrefetcher.py:from m5.SimObject import SimObject
+./src/mem/ruby/structures/RubyPrefetcher.py:class Prefetcher(SimObject):
+./src/mem/ruby/structures/SConscript:SimObject('RubyPrefetcher.py')
+./src/mem/ruby/system/Cache.py:from m5.SimObject import SimObject
+./src/mem/ruby/system/Cache.py:class RubyCache(SimObject):
+./src/mem/ruby/system/CacheMemory.cc:    : SimObject(p),
+./src/mem/ruby/system/CacheMemory.hh:class CacheMemory : public SimObject
+./src/mem/ruby/system/DirectoryMemory.cc:    : SimObject(p)
+./src/mem/ruby/system/DirectoryMemory.hh:class DirectoryMemory : public SimObject
+./src/mem/ruby/system/DirectoryMemory.py:from m5.SimObject import SimObject
+./src/mem/ruby/system/DirectoryMemory.py:class RubyDirectoryMemory(SimObject):
+./src/mem/ruby/system/RubyMemoryControl.py:from m5.SimObject import SimObject
+./src/mem/ruby/system/SConscript:SimObject('Cache.py')
+./src/mem/ruby/system/SConscript:SimObject('Sequencer.py')
+./src/mem/ruby/system/SConscript:SimObject('DirectoryMemory.py')
+./src/mem/ruby/system/SConscript:SimObject('MemoryControl.py')
+./src/mem/ruby/system/SConscript:SimObject('WireBuffer.py')
+./src/mem/ruby/system/SConscript:SimObject('RubySystem.py')
+./src/mem/ruby/system/SConscript:SimObject('RubyMemoryControl.py')
+./src/mem/ruby/system/WireBuffer.cc:    : SimObject(p)
+./src/mem/ruby/system/WireBuffer.hh:class WireBuffer : public SimObject
+./src/mem/ruby/system/WireBuffer.py:from m5.SimObject import SimObject
+./src/mem/ruby/system/WireBuffer.py:class RubyWireBuffer(SimObject):
+./src/mem/slicc/symbols/StateMachine.py:from m5.SimObject import SimObject
+./src/python/SConscript:PySource('m5', 'm5/SimObject.py')
+./src/python/m5/SimObject.py:# load (when SimObject class references Param to create a class
+./src/python/m5/SimObject.py:     isNullPointer, SimObjectVector, Port
+./src/python/m5/SimObject.py:# objects corresponding to M5 SimObjects for the desired simulation
+./src/python/m5/SimObject.py:# Each SimObject class in M5 is represented by a Python class with the
+./src/python/m5/SimObject.py:# SimObjects inherit from a single SimObject base class).  To specify
+./src/python/m5/SimObject.py:# an instance of an M5 SimObject in a configuration, the user simply
+./src/python/m5/SimObject.py:# that SimObject are given by assigning to attributes of the Python
+./src/python/m5/SimObject.py:# The magic lies in the mapping of the Python attributes for SimObject
+./src/python/m5/SimObject.py:# classes to the actual SimObject parameter specifications.  This
+./src/python/m5/SimObject.py:# list of all SimObject classes
+./src/python/m5/SimObject.py:# dict to look up SimObjects based on path
+./src/python/m5/SimObject.py:# Did any of the SimObjects lack a header file?
+./src/python/m5/SimObject.py:# The metaclass for SimObject.  This class controls how new classes
+./src/python/m5/SimObject.py:# that derive from SimObject are instantiated, and provides inherited
+./src/python/m5/SimObject.py:class MetaSimObject(type):
+./src/python/m5/SimObject.py:        assert name not in allClasses, "SimObject %s already present" % name
+./src/python/m5/SimObject.py:        cls = super(MetaSimObject, mcls).__new__(mcls, name, bases, cls_dict)
+./src/python/m5/SimObject.py:        super(MetaSimObject, cls).__init__(name, bases, dict)
+./src/python/m5/SimObject.py:        cls._children = multidict() # SimObject children
+./src/python/m5/SimObject.py:            if isinstance(c, MetaSimObject):
+./src/python/m5/SimObject.py:                raise TypeError, "SimObjects do not support multiple inheritance"
+./src/python/m5/SimObject.py:        # the following is not true is when we define the SimObject
+./src/python/m5/SimObject.py:        if isinstance(base, MetaSimObject):
+./src/python/m5/SimObject.py:                warn("No header file specified for SimObject: %s", name)
+./src/python/m5/SimObject.py:                base_method = getattr(MetaSimObject, method_name)
+./src/python/m5/SimObject.py:                m = MethodType(base_method, cls, MetaSimObject)
+./src/python/m5/SimObject.py:        # if param value is a SimObject, make it a child too, so that
+./src/python/m5/SimObject.py:        if isSimObjectOrVector(value) and not value.has_parent():
+./src/python/m5/SimObject.py:        if isSimObjectOrSequence(value) and cls._instantiated:
+./src/python/m5/SimObject.py:                  "cannot set SimObject parameter '%s' after\n" \
+./src/python/m5/SimObject.py:        if isSimObjectOrSequence(value):
+./src/python/m5/SimObject.py:            # If RHS is a SimObject, it's an implicit child assignment.
+./src/python/m5/SimObject.py:            cls._add_cls_child(attr, coerceSimObjectOrVector(value))
+./src/python/m5/SimObject.py:    # declaring the relevant SimObject class must be included.
+./src/python/m5/SimObject.py:    # declaring the relevant SimObject class must be included.
+./src/python/m5/SimObject.py:    # Generate the C++ declaration (.hh file) for this SimObject's
+./src/python/m5/SimObject.py:        # The base SimObject has a couple of params that get
+./src/python/m5/SimObject.py:        if cls == SimObject:
+./src/python/m5/SimObject.py:        if cls == SimObject:
+./src/python/m5/SimObject.py:    SimObjectParams()
+./src/python/m5/SimObject.py:    virtual ~SimObjectParams() {}
+./src/python/m5/SimObject.py:# The SimObject class is the root of the special hierarchy.  Most of
+./src/python/m5/SimObject.py:class SimObject(object):
+./src/python/m5/SimObject.py:    # Specify metaclass.  Any class inheriting from SimObject will
+./src/python/m5/SimObject.py:    __metaclass__ = MetaSimObject
+./src/python/m5/SimObject.py:    type = 'SimObject'
+./src/python/m5/SimObject.py:    # Initialize new instance.  For objects with SimObject-valued
+./src/python/m5/SimObject.py:        # clone SimObject-valued parameters
+./src/python/m5/SimObject.py:            val = tryAsSimObjectOrVector(val)
+./src/python/m5/SimObject.py:        if isSimObjectOrSequence(value) and self._instantiated:
+./src/python/m5/SimObject.py:                  "cannot set SimObject parameter '%s' after\n" \
+./src/python/m5/SimObject.py:            if isSimObjectOrVector(value) and not value.has_parent():
+./src/python/m5/SimObject.py:        # if RHS is a SimObject, it's an implicit child assignment
+./src/python/m5/SimObject.py:        if isSimObjectOrSequence(value):
+./src/python/m5/SimObject.py:        raise TypeError, "Non-zero index '%s' to SimObject" % key
+./src/python/m5/SimObject.py:    # Also implemented by SimObjectVector
+./src/python/m5/SimObject.py:    # Also implemented by SimObjectVector
+./src/python/m5/SimObject.py:    # Also implemented by SimObjectVector
+./src/python/m5/SimObject.py:    # Also implemented by SimObjectVector
+./src/python/m5/SimObject.py:        child = coerceSimObjectOrVector(child)
+./src/python/m5/SimObject.py:    # Take SimObject-valued parameters that haven't been explicitly
+./src/python/m5/SimObject.py:            if not isSimObjectVector(val) and isSimObjectSequence(val):
+./src/python/m5/SimObject.py:                # need to convert raw SimObject sequences to
+./src/python/m5/SimObject.py:                # SimObjectVector class so we can call has_parent()
+./src/python/m5/SimObject.py:                val = SimObjectVector(val)
+./src/python/m5/SimObject.py:            if isSimObjectOrVector(val) and not val.has_parent():
+./src/python/m5/SimObject.py:                warn("%s adopting orphan SimObject param '%s'", self, key)
+./src/python/m5/SimObject.py:                if isSimObject(child):
+./src/python/m5/SimObject.py:def resolveSimObject(name):
+./src/python/m5/SimObject.py:def isSimObject(value):
+./src/python/m5/SimObject.py:    return isinstance(value, SimObject)
+./src/python/m5/SimObject.py:def isSimObjectClass(value):
+./src/python/m5/SimObject.py:    return issubclass(value, SimObject)
+./src/python/m5/SimObject.py:def isSimObjectVector(value):
+./src/python/m5/SimObject.py:    return isinstance(value, SimObjectVector)
+./src/python/m5/SimObject.py:def isSimObjectSequence(value):
+./src/python/m5/SimObject.py:        if not isNullPointer(val) and not isSimObject(val):
+./src/python/m5/SimObject.py:def isSimObjectOrSequence(value):
+./src/python/m5/SimObject.py:    return isSimObject(value) or isSimObjectSequence(value)
+./src/python/m5/SimObject.py:def isSimObjectOrVector(value):
+./src/python/m5/SimObject.py:    return isSimObject(value) or isSimObjectVector(value)
+./src/python/m5/SimObject.py:def tryAsSimObjectOrVector(value):
+./src/python/m5/SimObject.py:    if isSimObjectOrVector(value):
+./src/python/m5/SimObject.py:    if isSimObjectSequence(value):
+./src/python/m5/SimObject.py:        return SimObjectVector(value)
+./src/python/m5/SimObject.py:def coerceSimObjectOrVector(value):
+./src/python/m5/SimObject.py:    value = tryAsSimObjectOrVector(value)
+./src/python/m5/SimObject.py:        raise TypeError, "SimObject or SimObjectVector expected"
+./src/python/m5/SimObject.py:__all__ = [ 'SimObject' ]
+./src/python/m5/__init__.py:    import SimObject
+./src/python/m5/main.py:        help="List all built-in SimObjects, their params and default values")
+./src/python/m5/main.py:        import SimObject
+./src/python/m5/main.py:        print "SimObjects:"
+./src/python/m5/main.py:        objects = SimObject.allClasses.keys()
+./src/python/m5/main.py:            obj = SimObject.allClasses[name]
+./src/python/m5/objects/__init__.py:from m5.SimObject import *
+./src/python/m5/params.py:# MetaSimObject._new_param()); after that point they aren't used.
+./src/python/m5/params.py:def isSimObject(*args, **kwargs):
+./src/python/m5/params.py:    return SimObject.isSimObject(*args, **kwargs)
+./src/python/m5/params.py:def isSimObjectSequence(*args, **kwargs):
+./src/python/m5/params.py:    return SimObject.isSimObjectSequence(*args, **kwargs)
+./src/python/m5/params.py:def isSimObjectClass(*args, **kwargs):
+./src/python/m5/params.py:    return SimObject.isSimObjectClass(*args, **kwargs)
+./src/python/m5/params.py:# Dummy base class to identify types that are legitimate for SimObject
+./src/python/m5/params.py:            ptype = SimObject.allClasses[self.ptype_str]
+./src/python/m5/params.py:            assert isSimObjectClass(ptype)
+./src/python/m5/params.py:            # deferred evaluation of SimObject; continue to defer if
+./src/python/m5/params.py:        if isNullPointer(value) and isSimObjectClass(self.ptype):
+./src/python/m5/params.py:class SimObjectVector(VectorParamValue):
+./src/python/m5/params.py:        return SimObjectVector([v(**kwargs) for v in self])
+./src/python/m5/params.py:    # we can nicely handle iterating over all a SimObject's children
+./src/python/m5/params.py:    # SimObjectVector directly.
+./src/python/m5/params.py:        if isSimObjectSequence(tmp_list):
+./src/python/m5/params.py:            return SimObjectVector(tmp_list)
+./src/python/m5/params.py:            # if name isn't defined yet, assume it's a SimObject, and
+./src/python/m5/params.py:# SimObject is required.
+./src/python/m5/params.py:class NullSimObject(object):
+./src/python/m5/params.py:NULL = NullSimObject()
+./src/python/m5/params.py:    return isinstance(value, NullSimObject)
+./src/python/m5/params.py:# particular SimObject.
+./src/python/m5/params.py:        assert(isSimObject(simobj) or isSimObjectClass(simobj))
+./src/python/m5/params.py:    # SimObject.__setattr__ as a result of a port assignment, e.g.,
+./src/python/m5/params.py:        assert(isSimObject(newRef.simobj))
+./src/python/m5/params.py:        assert(isSimObject(simobj) or isSimObjectClass(simobj))
+./src/python/m5/params.py:        assert(isSimObject(newRef.simobj))
+./src/python/m5/params.py:# logical port in the SimObject class, not a particular port on a
+./src/python/m5/params.py:# SimObject instance.  The latter are represented by PortRef objects.
+./src/python/m5/params.py:    # Generate a PortRef for this port on the given SimObject with the
+./src/python/m5/params.py:    # Connect an instance of this port (on the given SimObject with
+./src/python/m5/params.py:import SimObject
+./src/python/m5/simulate.py:import SimObject
+./src/python/m5/simulate.py:    # Make sure SimObject-valued params are in the configuration
+./src/python/m5/stats/__init__.py:    # call reset stats on all SimObjects
+./src/python/m5/util/dot_writer.py:# do_dot should be called with the top-most SimObject (namely root
+./src/python/m5/util/dot_writer.py:from m5.SimObject import isRoot, isSimObjectVector
+./src/python/m5/util/dot_writer.py:            if isSimObjectVector(child):
+./src/python/m5/util/dot_writer.py:            if isSimObjectVector(child):
+./src/python/swig/pyobject.cc:lookupEthPort(SimObject *so, const std::string &name, int i)
+./src/python/swig/pyobject.cc:        warn("error casting SimObject %s", so->name());
+./src/python/swig/pyobject.cc: * SimObject1 is the master, and SimObject2 is the slave
+./src/python/swig/pyobject.cc:connectPorts(SimObject *o1, const std::string &name1, int i1,
+./src/python/swig/pyobject.cc:             SimObject *o2, const std::string &name2, int i2)
+./src/python/swig/pyobject.cc:        panic ("Error casting SimObjects %s and %s to MemObject", o1->name(),
+./src/python/swig/pyobject.cc: * SimObject pointer back to the actual C++ pointer.  See main.i.
+./src/python/swig/pyobject.cc:extern "C" SimObject *convertSwigSimObjectPtr(PyObject *);
+./src/python/swig/pyobject.cc:SimObject *
+./src/python/swig/pyobject.cc:resolveSimObject(const string &name)
+./src/python/swig/pyobject.cc:    PyObject *module = PyImport_ImportModule(PCC("m5.SimObject"));
+./src/python/swig/pyobject.cc:        panic("Could not import m5.SimObject");
+./src/python/swig/pyobject.cc:        PyObject_GetAttrString(module, PCC("resolveSimObject"));
+./src/python/swig/pyobject.cc:        panic("resolveSimObject: failed to find resolveSimObject");
+./src/python/swig/pyobject.cc:        panic("resolveSimObject: failure on call to Python for %s", name);
+./src/python/swig/pyobject.cc:    SimObject *obj = convertSwigSimObjectPtr(ptr);
+./src/python/swig/pyobject.cc:        panic("resolveSimObject: failure on pointer conversion for %s", name);
+./src/python/swig/pyobject.hh:extern "C" SimObject *convertSwigSimObjectPtr(PyObject *);
+./src/python/swig/pyobject.hh:SimObject *resolveSimObject(const std::string &name);
+./src/python/swig/pyobject.hh:EtherInt * lookupEthPort(SimObject *so, const std::string &name, int i);
+./src/python/swig/pyobject.hh:int connectPorts(SimObject *o1, const std::string &name1, int i1,
+./src/python/swig/pyobject.hh:    SimObject *o2, const std::string &name2, int i2);
+./src/python/swig/pyobject.i:int connectPorts(SimObject *o1, const std::string &name1, int i1,
+./src/python/swig/pyobject.i:                 SimObject *o2, const std::string &name2, int i2);
+./src/python/swig/pyobject.i:// C++ SimObject pointer back to the actual C++ pointer.
+./src/python/swig/pyobject.i:SimObject *
+./src/python/swig/pyobject.i:convertSwigSimObjectPtr(PyObject *pyObj)
+./src/python/swig/pyobject.i:    SimObject *so;
+./src/python/swig/pyobject.i:    if (SWIG_ConvertPtr(pyObj, (void **) &so, SWIGTYPE_p_SimObject, 0) == -1)
+./src/sim/BaseTLB.py:from m5.SimObject import SimObject
+./src/sim/BaseTLB.py:class BaseTLB(SimObject):
+./src/sim/ClockedObject.py:from m5.SimObject import SimObject
+./src/sim/ClockedObject.py:class ClockedObject(SimObject):
+./src/sim/InstTracer.py:from m5.SimObject import SimObject
+./src/sim/InstTracer.py:class InstTracer(SimObject):
+./src/sim/Process.py:from m5.SimObject import SimObject
+./src/sim/Process.py:class Process(SimObject):
+./src/sim/Root.py:from m5.SimObject import SimObject
+./src/sim/Root.py:class Root(SimObject):
+./src/sim/Root.py:        # If SimObject ever implements __new__, we may want to pass
+./src/sim/Root.py:        Root._the_instance = SimObject.__new__(cls)
+./src/sim/SConscript:SimObject('BaseTLB.py')
+./src/sim/SConscript:SimObject('ClockedObject.py')
+./src/sim/SConscript:SimObject('Root.py')
+./src/sim/SConscript:SimObject('InstTracer.py')
+./src/sim/SConscript:    SimObject('Process.py')
+./src/sim/SConscript:    SimObject('System.py')
+./src/sim/System.py:from m5.SimObject import SimObject
+./src/sim/clocked_object.hh: * The ClockedObject class extends the SimObject with a clock and
+./src/sim/clocked_object.hh:class ClockedObject : public SimObject
+./src/sim/clocked_object.hh:        SimObject(p), tick(0), cycle(0), clock(p->clock)
+./src/sim/drain.hh: * When draining a System, we need to make sure that all SimObjects in
+./src/sim/insttracer.hh:class InstTracer : public SimObject
+./src/sim/insttracer.hh:    InstTracer(const Params *p) : SimObject(p)
+./src/sim/process.cc:    : SimObject(params), system(params->system),
+./src/sim/process.hh:class Process : public SimObject
+./src/sim/process.hh:    // override of virtual SimObject method: register statistics
+./src/sim/root.cc:Root::Root(RootParams *p) : SimObject(p), _enabled(false),
+./src/sim/root.cc:    SimObject::loadState(cp);
+./src/sim/root.hh:class Root : public SimObject
+./src/sim/serialize.cc:extern SimObject *resolveSimObject(const string &);
+./src/sim/serialize.cc:           const string &name, SimObject * &param)
+./src/sim/serialize.cc:    SimObject::serializeAll(outstream);
+./src/sim/serialize.cc:                    SimObject *&value)
+./src/sim/serialize.cc:    value = resolveSimObject(path);
+./src/sim/serialize.hh:class SimObject;
+./src/sim/serialize.hh: * SimObject shouldn't cause the version number to increase, only changes to
+./src/sim/serialize.hh:           const std::string &name, SimObject * &param);
+./src/sim/serialize.hh:void fromSimObject(T &t, SimObject *s)
+./src/sim/serialize.hh:    SimObject *sptr;                                    \
+./src/sim/serialize.hh:    fromSimObject(objptr, sptr);                        \
+./src/sim/serialize.hh:                 SimObject *&value);
+./src/sim/sim_object.cc:// SimObject member definitions
+./src/sim/sim_object.cc:// static list of all SimObjects, used for initialization etc.
+./src/sim/sim_object.cc:SimObject::SimObjectList SimObject::simObjectList;
+./src/sim/sim_object.cc:// SimObject constructor: used to maintain static simObjectList
+./src/sim/sim_object.cc:SimObject::SimObject(const Params *p)
+./src/sim/sim_object.cc:SimObject::init()
+./src/sim/sim_object.cc:SimObject::loadState(Checkpoint *cp)
+./src/sim/sim_object.cc:SimObject::initState()
+./src/sim/sim_object.cc:SimObject::startup()
+./src/sim/sim_object.cc:SimObject::regStats()
+./src/sim/sim_object.cc:SimObject::resetStats()
+./src/sim/sim_object.cc:// static function: serialize all SimObjects.
+./src/sim/sim_object.cc:SimObject::serializeAll(std::ostream &os)
+./src/sim/sim_object.cc:    SimObjectList::reverse_iterator ri = simObjectList.rbegin();
+./src/sim/sim_object.cc:    SimObjectList::reverse_iterator rend = simObjectList.rend();
+./src/sim/sim_object.cc:        SimObject *obj = *ri;
+./src/sim/sim_object.cc:SimObject::debugObjectBreak(const string &objs)
+./src/sim/sim_object.cc:    SimObjectList::const_iterator i = simObjectList.begin();
+./src/sim/sim_object.cc:    SimObjectList::const_iterator end = simObjectList.end();
+./src/sim/sim_object.cc:        SimObject *obj = *i;
+./src/sim/sim_object.cc:    SimObject::debugObjectBreak(string(objs));
+./src/sim/sim_object.cc:SimObject::drain(DrainManager *drain_manager)
+./src/sim/sim_object.cc:SimObject *
+./src/sim/sim_object.cc:SimObject::find(const char *name)
+./src/sim/sim_object.cc:    SimObjectList::const_iterator i = simObjectList.begin();
+./src/sim/sim_object.cc:    SimObjectList::const_iterator end = simObjectList.end();
+./src/sim/sim_object.cc:        SimObject *obj = *i;
+./src/sim/sim_object.hh:#include "params/SimObject.hh"
+./src/sim/sim_object.hh: * SimObject initialization is controlled by the instantiate method in
+./src/sim/sim_object.hh: * <li>SimObject::init()
+./src/sim/sim_object.hh: * <li>SimObject::regStats()
+./src/sim/sim_object.hh: *     <li>SimObject::initState() if starting afresh.
+./src/sim/sim_object.hh: *     <li>SimObject::loadState() if restoring from a checkpoint.
+./src/sim/sim_object.hh: * <li>SimObject::resetStats()
+./src/sim/sim_object.hh: * <li>SimObject::startup()
+./src/sim/sim_object.hh: * SimObject.py). This has the effect of calling the method on the
+./src/sim/sim_object.hh:class SimObject : public EventManager, public Serializable, public Drainable
+./src/sim/sim_object.hh:    typedef std::vector<SimObject *> SimObjectList;
+./src/sim/sim_object.hh:    static SimObjectList simObjectList;
+./src/sim/sim_object.hh:    const SimObjectParams *_params;
+./src/sim/sim_object.hh:    typedef SimObjectParams Params;
+./src/sim/sim_object.hh:    SimObject(const Params *_params);
+./src/sim/sim_object.hh:    virtual ~SimObject() {}
+./src/sim/sim_object.hh:     * init() is called after all C++ SimObjects have been created and
+./src/sim/sim_object.hh:     * connected SimObject graph should be done here.
+./src/sim/sim_object.hh:     * loadState() is called on each SimObject when restoring from a
+./src/sim/sim_object.hh:     * initState() is called on each SimObject when *not* restoring
+./src/sim/sim_object.hh:     * Serialize all SimObjects in the system.
+./src/sim/sim_object.hh:     * Find the SimObject with the given name and return a pointer to
+./src/sim/sim_object.hh:    static SimObject *find(const char *name);
+./src/sim/system.hh:     * CPUs. SimObjects are expected to use Port::sendAtomic() and
+./src/sim/system.hh:     * SimObjects are expected to use Port::sendTiming() and
+./src/sim/tlb.hh:class BaseTLB : public SimObject
+./src/sim/tlb.hh:        : SimObject(p)
+./tests/run.py:    """Test if a SimObject exists in the simulator.
+./tests/run.py:      name -- Name of SimObject (string)
+./tests/run.py:        return issubclass(cls, m5.objects.SimObject)
+./tests/run.py:    """Test if a SimObject exists and abort/skip test if not.
+./tests/run.py:      name -- Name of SimObject (string)
+./tests/run.py:        msg = "Test requires the '%s' SimObject." % name
+./util/cpt_upgrader.py:# The ISA is now a separate SimObject, which means that we serialize
+./util/cpt_upgrader.py:        # (after we made the ISA a SimObject, but before we started to
+./rubycache_search.log:./src/mem/ruby/system/Cache.py:class RubyCache(SimObject):
