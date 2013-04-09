@@ -14,7 +14,7 @@
 # contributors may be used to endorse or promote products derived from
 # this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+# THIS SOFTWARE IS PROVIDED BY THE COwerrPYRIGHT HOLDERS AND CONTRIBUTORS
 # "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
 # LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
 # A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
@@ -151,7 +151,7 @@ class SourceFile(object):
         
 class Source(SourceFile):
     '''Add a c/c++ source file to the build'''
-    def __init__(self, source, Werror=True, swig=False, **guards):
+    def __init__(self, source, Werror=False, swig=False, **guards):
         '''specify the source file, and any guards'''
         super(Source, self).__init__(source, **guards)
 
@@ -892,7 +892,7 @@ def makeEnv(label, objsfx, strip = False, **kwargs):
     new_env.Append(**kwargs)
 
     swig_env = new_env.Clone()
-    swig_env.Append(CCFLAGS='-Werror')
+    #swig_env.Append(CCFLAGS='-Werror')
 
     # Both gcc and clang have issues with unused labels and values in
     # the SWIG generated code
@@ -923,7 +923,7 @@ def makeEnv(label, objsfx, strip = False, **kwargs):
         new_env.Append(CXXFLAGS=['-Wdelete-non-virtual-dtor'])
 
     werror_env = new_env.Clone()
-    werror_env.Append(CCFLAGS='-Werror')
+    #werror_env.Append(CCFLAGS='-Werror')
 
     def make_obj(source, static, extra_deps = None):
         '''This function adds the specified source to the correct
