@@ -923,7 +923,7 @@ def makeEnv(label, objsfx, strip = False, **kwargs):
         new_env.Append(CXXFLAGS=['-Wdelete-non-virtual-dtor'])
 
     werror_env = new_env.Clone()
-    werror_env.Append(CCFLAGS='-Werror')
+    #werror_env.Append(CCFLAGS='-Werror')
 
     def make_obj(source, static, extra_deps = None):
         '''This function adds the specified source to the correct
